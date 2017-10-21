@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="gwt-sql/gwt-sql.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/gwt-sql/export-2-jar.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="true" exportOutputFolder="false">
+        <javaElement handleIdentifier="=gwt-sql/src\/main\/java"/>
+        <file path="/gwt-sql/pom.xml"/>
+        <javaElement handleIdentifier="=gwt-sql/src\/test\/java"/>
+        <file path="/gwt-sql/.classpath"/>
+        <file path="/gwt-sql/.project"/>
+    </selectedElements>
+</jardesc>
