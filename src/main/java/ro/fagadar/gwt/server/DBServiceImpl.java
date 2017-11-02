@@ -44,8 +44,8 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.export.JRXlsExporter;
 import net.sf.jasperreports.engine.export.JRXlsExporterParameter;
-import ro.fagadar.gwt.client.DBService;
 import ro.fagadar.daylight.*;
+import ro.fagadar.gwt.client.DBService;
 
 @SuppressWarnings({ "serial", "deprecation" })
 public class DBServiceImpl extends RemoteServiceServlet implements DBService {
@@ -265,9 +265,8 @@ public class DBServiceImpl extends RemoteServiceServlet implements DBService {
 	public DBRecord DoLogin(String p_strAlias, String p_strPassword, String p_AliasField, String p_PasswordField,
 			String p_tableName) {
 		DBRecord oRecord = new DBRecord(DBConnection.isLog);
-		try {// TODO - DOLogin
-				// DbManager.getDB().DoLogin(oRecord, p_strAlias, p_strPassword,
-				// p_PasswordField, p_AliasField, p_tableName);
+		try {
+			oRecord = DbManager.getDB().DoLogin(p_strAlias, p_strPassword, p_PasswordField, p_AliasField, p_tableName);
 
 			/* store the user in session */
 			HttpServletRequest httpServletRequest = this.getThreadLocalRequest();
@@ -283,16 +282,15 @@ public class DBServiceImpl extends RemoteServiceServlet implements DBService {
 
 	public DBRecord doClientLogin(ArrayList<String> fieldsList, ArrayList<String> valuesList) {
 
-		DBRecord oRecord = new DBRecord(DBConnection.isLog);
 		try {
 
-			// TODO - client login
-			// DbManager.getDB().doClientLogin(oRecord, fieldsList, valuesList);
-			return oRecord;
+			// client login
+			return DbManager.getDB().doClientLogin(fieldsList, valuesList);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return oRecord;
+		return new DBRecord();
 	}
 
 	public String DoLogout() {
